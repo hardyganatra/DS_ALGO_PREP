@@ -13,6 +13,15 @@ class LinkedList {
 		let Newnode = new Node(data, this.head);
 		this.head = Newnode;
 	}
+	CalcNumOfNodes() {
+		let Node = this.head;
+		let counter = 0;
+		while (Node) {
+			counter++;
+			Node = Node.next;
+		}
+		return counter + 1;
+	}
 }
 
 let list = new LinkedList();
@@ -22,3 +31,9 @@ list.insertHead(2);
 list;
 list.insertHead(3);
 list;
+list.insertHead(3);
+////////////////////////////////////////////////
+// CalcNumOfNodes;
+let ans = list.CalcNumOfNodes();
+ans;
+////////////////////////////////////////////////
