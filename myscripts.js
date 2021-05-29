@@ -1,3 +1,4 @@
+// initial setup of Node and LinkedList classes
 class Node {
 	constructor(data, next = null) {
 		this.data = data;
