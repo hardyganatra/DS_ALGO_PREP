@@ -22,6 +22,21 @@ class LinkedList {
 		}
 		return counter + 1;
 	}
+	GiveMeFirstNode() {
+		return this.head;
+	}
+	GiveMeLastNode() {
+		let Node = this.head;
+		if (Node === undefined) {
+			return "No  Nodes Associated";
+		}
+		while (Node) {
+			if (Node.next === null) {
+				return Node;
+			}
+			Node = Node.next;
+		}
+	}
 }
 
 let list = new LinkedList();
@@ -34,6 +49,13 @@ list;
 list.insertHead(3);
 ////////////////////////////////////////////////
 // CalcNumOfNodes;
-let ans = list.CalcNumOfNodes();
-ans;
+let TotaNodes = list.CalcNumOfNodes();
+TotaNodes;
 ////////////////////////////////////////////////
+//GiveMeFirstNode
+let firstNode = list.GiveMeFirstNode();
+firstNode;
+////////////////////////////////////////////////
+//GiveMeLastNode
+let lastNode = list.GiveMeLastNode();
+lastNode;
