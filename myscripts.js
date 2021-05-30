@@ -37,6 +37,9 @@ class LinkedList {
 			Node = Node.next;
 		}
 	}
+	clearList() {
+		this.head = null;
+	}
 }
 
 let list = new LinkedList();
@@ -59,3 +62,6 @@ firstNode;
 //GiveMeLastNode
 let lastNode = list.GiveMeLastNode();
 lastNode;
+//////////////////////////////////////////////////////
+list.clearList();
+list;
