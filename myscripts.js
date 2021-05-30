@@ -20,7 +20,7 @@ class LinkedList {
 			counter++;
 			Node = Node.next;
 		}
-		return counter + 1;
+		return counter;
 	}
 	GiveMeFirstNode() {
 		return this.head;
@@ -45,6 +45,25 @@ class LinkedList {
 		this.head = Node.next;
 		// this.head;
 	}
+	RemoveMyLastNode() {
+		let Previous = this.head;
+		let Next = Previous.next;
+		if (!Previous) {
+			return;
+		}
+		if (!Next) {
+			this.head = null;
+			return;
+		}
+		while (Next) {
+			if (Next.next === null) {
+				Previous.next = null;
+				return;
+			}
+			Previous = Previous.next;
+			Next = Next.next;
+		}
+	}
 }
 
 let list = new LinkedList();
@@ -54,7 +73,9 @@ list.insertHead(2);
 list;
 list.insertHead(3);
 // list;
-// list.insertHead(3);
+list.insertHead(4);
+list.insertHead(5);
+
 ////////////////////////////////////////////////
 // CalcNumOfNodes;
 let TotaNodes = list.CalcNumOfNodes();
@@ -71,6 +92,11 @@ lastNode;
 // list.clearList();
 // list;
 //////////////////////////////////////////////////////
+// list;
+// let RemoveMyFirstNodeList = list.RemoveMyFirstNode();
+// list;
+//////////////////////////////////////////////////////
 list;
-let RemoveMyFirstNodeList = list.RemoveMyFirstNode();
+let RemoveMyLastNodeList = list.RemoveMyLastNode();
 list;
+//////////////////////////////////////////////////////
