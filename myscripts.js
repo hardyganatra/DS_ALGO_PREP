@@ -64,6 +64,20 @@ class LinkedList {
 			Next = Next.next;
 		}
 	}
+	insertLastNode(data) {
+		let NodeIterator = this.head;
+		if (!NodeIterator) {
+			this.head = new Node(data);
+			return;
+		}
+		while (NodeIterator) {
+			if (NodeIterator.next === null) {
+				NodeIterator.next = new Node(data);
+				return;
+			}
+			NodeIterator = NodeIterator.next;
+		}
+	}
 }
 
 let list = new LinkedList();
@@ -96,7 +110,10 @@ lastNode;
 // let RemoveMyFirstNodeList = list.RemoveMyFirstNode();
 // list;
 //////////////////////////////////////////////////////
-list;
-let RemoveMyLastNodeList = list.RemoveMyLastNode();
-list;
+// list;
+// let RemoveMyLastNodeList = list.RemoveMyLastNode();
+// list;
 //////////////////////////////////////////////////////
+list;
+let myInsertLast = list.insertLastNode("Last");
+list;
