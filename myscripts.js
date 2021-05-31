@@ -78,6 +78,18 @@ class LinkedList {
 			NodeIterator = NodeIterator.next;
 		}
 	}
+	getNodeAt(index) {
+		let refNode = 0;
+		let Node = this.head;
+		while (Node) {
+			if (refNode === index) {
+				return Node;
+			}
+			Node = Node.next;
+			refNode++;
+		}
+		return "Node does not exists at given Index";
+	}
 }
 
 let list = new LinkedList();
@@ -117,3 +129,6 @@ lastNode;
 list;
 let myInsertLast = list.insertLastNode("Last");
 list;
+//////////////////////////////////////////////////////
+let myGetAt = list.getNodeAt(6);
+myGetAt;
