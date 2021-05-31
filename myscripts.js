@@ -90,6 +90,26 @@ class LinkedList {
 		}
 		return "Node does not exists at given Index";
 	}
+	removeAt(index) {
+		let PreviousIndex = this.getNodeAt(index - 1);
+		let NextIndex = this.getNodeAt(index + 1);
+		if (!PreviousIndex || !NextIndex) {
+			return;
+		}
+		if (index === 0) {
+			this.head = this.head.next;
+			return;
+		}
+		let refNode = 0;
+		let Node = this.head;
+		while (Node) {
+			if (refNode === index) {
+				PreviousIndex.next = NextIndex;
+			}
+			Node = Node.next;
+			refNode++;
+		}
+	}
 }
 
 let list = new LinkedList();
@@ -132,3 +152,8 @@ list;
 //////////////////////////////////////////////////////
 let myGetAt = list.getNodeAt(6);
 myGetAt;
+//////////////////////////////////////////////////////
+list;
+list.removeAt(0);
+list;
+//////////////////////////////////////////////////////
